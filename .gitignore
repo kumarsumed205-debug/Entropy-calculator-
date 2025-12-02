@@ -1,4 +1,10 @@
-__pycache__/
+git remote remove origin 2>$null
+git remote add origin https://github.com/kumarsumed205-debug/entropycalculator.git
+git branch -M main
+git push -u origin maingit remote remove origin 2>$null
+git remote add origin https://github.com/kumarsumed205-debug/entropycalculator.git
+git branch -M main
+git push -u origin main__pycache__/
 *.pyc
 node_modules/
 .vscode/

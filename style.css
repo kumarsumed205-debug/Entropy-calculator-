@@ -14,20 +14,22 @@ body{
   color:#0b1220;
   -webkit-font-smoothing:antialiased;
 }
-.container{max-width:860px;margin:36px auto;padding:20px}
-h1{margin:0 0 16px;font-size:1.6rem}
+
+.container{max-width:880px;margin:28px auto;padding:18px}
+h1{margin:0 0 14px;font-size:1.5rem}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tab-btn{padding:8px 10px;border-radius:8px;border:1px solid rgba(16,24,40,0.06);background:white;cursor:pointer}
+.tab-btn.active{background:linear-gradient(90deg,var(--accent),#7b9bff);color:white;border-color:transparent}
 .card{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:0 6px 18px rgba(16,24,40,0.06);margin-bottom:16px}
-label{display:block;margin-bottom:8px;color:var(--muted)}
-textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #e6e9f2;font-size:0.95rem}
-.controls{margin-top:10px;display:flex;gap:8px}
+label{display:block;margin-bottom:6px;color:var(--muted)}
+input[type="number"], select{width:100%;padding:8px;border-radius:8px;border:1px solid #e6e9f2;font-size:0.95rem;margin-bottom:10px}
+.inline-row{display:flex;gap:8px}
+.inline-row input{flex:1}
+.inline-row select{width:140px}
+.controls{margin-top:8px;display:flex;gap:8px}
 button{background:var(--accent);color:white;border:0;padding:8px 12px;border-radius:8px;cursor:pointer}
 button.secondary{background:#e6e9f2;color:#0b1220}
-.results h2{margin-top:0}
-.result-row{margin:8px 0}
-.distribution{display:flex;flex-direction:column;gap:6px}
-.dist-item{display:flex;gap:8px;align-items:center}
-.bar{height:18px;border-radius:6px;background:linear-gradient(90deg,var(--accent),#7b9bff);flex:1;min-width:40px}
-.label{width:36px;font-family:monospace}
-footer{margin-top:18px;color:var(--muted);font-size:0.85rem}
+.result{background:#fbfdff;border-radius:8px;padding:12px;margin-top:12px;white-space:pre-wrap}
+footer{margin-top:12px;color:var(--muted);font-size:0.85rem}
 
-@media (max-width:560px){.container{padding:12px}h1{font-size:1.25rem}}
+@media (max-width:560px){.container{padding:12px}h1{font-size:1.25rem}.inline-row select{width:110px}}

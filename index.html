@@ -1,38 +1,112 @@
-<!doctype html>
+git remote remove origin 2>$null
+git remote add origin https://github.com/kumarsumed205-debug/entropycalculator.git
+git branch -M main
+git push -u origin main<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Entropy Calculator</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <main class="container">
-      <h1>Entropy Calculator</h1>
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>Entropy Change Calculator</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <main class="container">
+        <h1>Entropy Change Calculator</h1>
 
-      <section class="card">
-        <label for="inputText">Enter text (or paste):</label>
-        <textarea id="inputText" rows="6" placeholder="Type or paste some text..."></textarea>
-        <div class="controls">
-          <button id="calcBtn">Compute Entropy</button>
-          <button id="clearBtn" class="secondary">Clear</button>
-        </div>
-      </section>
+        <nav class="tabs">
+          <button class="tab-btn active" data-target="phase">Phase Change</button>
+          <button class="tab-btn" data-target="heating">Heating</button>
+          <button class="tab-btn" data-target="expansion">Expansion</button>
+          <button class="tab-btn" data-target="spontaneity">Spontaneity</button>
+        </nav>
 
-      <section class="card results">
-        <h2>Results</h2>
-        <div class="result-row"><strong>Shannon Entropy:</strong> <span id="entropy">—</span> bits/character</div>
-        <div class="result-row"><strong>Length:</strong> <span id="length">0</span> characters</div>
+        <section id="phase" class="card tab active">
+          <h2>ΔS = ΔH / T</h2>
+          <label>Enthalpy (ΔH) [kJ/mol]</label>
+          <input id="ph_dh" type="number" step="any" />
 
-        <h3>Distribution</h3>
-        <div id="distribution" class="distribution" aria-live="polite"></div>
-      </section>
+          <label>Temperature</label>
+          <div class="inline-row">
+            <input id="ph_t" type="number" step="any" />
+            <select id="ph_unit"><option>Celsius</option><option>Kelvin</option></select>
+          </div>
 
-      <footer>
-        <small>Files: <code>index.html</code>, <code>style.css</code>, <code>script.js</code></small>
-      </footer>
-    </main>
+          <div class="controls">
+            <button id="ph_calc">Calculate ΔS</button>
+            <button id="ph_clear" class="secondary">Clear</button>
+          </div>
 
-    <script src="script.js"></script>
-  </body>
-</html>
+          <pre id="ph_result" class="result">No result yet.</pre>
+        </section>
+
+        <section id="heating" class="card tab">
+          <h2>ΔS = n · C · ln(T₂/T₁)</h2>
+          <label>Moles (n)</label>
+          <input id="heat_n" type="number" step="any" />
+          <label>Heat Capacity (C) [J/mol·K]</label>
+          <input id="heat_c" type="number" step="any" />
+
+          <label>Initial Temp (T₁)</label>
+          <input id="heat_t1" type="number" step="any" />
+          <label>Final Temp (T₂)</label>
+          <input id="heat_t2" type="number" step="any" />
+
+          <label>Temperature Unit</label>
+          <select id="heat_unit"><option>Celsius</option><option>Kelvin</option></select>
+
+          <div class="controls">
+            <button id="heat_calc">Calculate ΔS</button>
+            <button id="heat_clear" class="secondary">Clear</button>
+          </div>
+
+          <pre id="heat_result" class="result">No result yet.</pre>
+        </section>
+
+        <section id="expansion" class="card tab">
+          <h2>ΔS = n · R · ln(V₂/V₁)</h2>
+          <label>Moles (n)</label>
+          <input id="exp_n" type="number" step="any" />
+          <label>Initial Volume (V₁)</label>
+          <input id="exp_v1" type="number" step="any" />
+          <label>Final Volume (V₂)</label>
+          <input id="exp_v2" type="number" step="any" />
+
+          <div class="controls">
+            <button id="exp_calc">Calculate ΔS</button>
+            <button id="exp_clear" class="secondary">Clear</button>
+          </div>
+
+          <pre id="exp_result" class="result">No result yet.</pre>
+        </section>
+
+        <section id="spontaneity" class="card tab">
+          <h2>ΔG = ΔH - TΔS</h2>
+          <label>ΔH (kJ)</label>
+          <input id="spon_dh" type="number" step="any" />
+          <label>ΔS (J/K)</label>
+          <input id="spon_ds" type="number" step="any" />
+
+          <label>Temperature</label>
+          <div class="inline-row">
+            <input id="spon_t" type="number" step="any" />
+            <select id="spon_unit"><option>Celsius</option><option>Kelvin</option></select>
+          </div>
+
+          <div class="controls">
+            <button id="spon_calc">Check Spontaneity</button>
+            <button id="spon_clear" class="secondary">Clear</button>
+          </div>
+
+          <pre id="spon_result" class="result">No result yet.</pre>
+        </section>
+
+        <footer>
+          <small>Web version of the original Tkinter `entropycalculator.py` app.</small>
+        </footer>
+      </main>
+
+      <script src="script.js"></script>
+    </body>
+  </html>
