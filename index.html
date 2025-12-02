@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Entropy Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="container">
+      <h1>Entropy Calculator</h1>
+
+      <section class="card">
+        <label for="inputText">Enter text (or paste):</label>
+        <textarea id="inputText" rows="6" placeholder="Type or paste some text..."></textarea>
+        <div class="controls">
+          <button id="calcBtn">Compute Entropy</button>
+          <button id="clearBtn" class="secondary">Clear</button>
+        </div>
+      </section>
+
+      <section class="card results">
+        <h2>Results</h2>
+        <div class="result-row"><strong>Shannon Entropy:</strong> <span id="entropy">—</span> bits/character</div>
+        <div class="result-row"><strong>Length:</strong> <span id="length">0</span> characters</div>
+
+        <h3>Distribution</h3>
+        <div id="distribution" class="distribution" aria-live="polite"></div>
+      </section>
+
+      <footer>
+        <small>Files: <code>index.html</code>, <code>style.css</code>, <code>script.js</code></small>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
