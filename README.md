@@ -1,26 +1,118 @@
-# Entropy Calculator (web)
+README.md — Entropy Change Calculator (GUI Application)
+<br>
+ Overview
 
-Simple client-side webpage to compute Shannon entropy (bits/character) for a given text.
+The Entropy Change Calculator is a Python-based desktop application built using Tkinter.
+It provides an intuitive GUI to calculate different entropy-related thermodynamic quantities for chemistry and physics students.
 
-Files
-- `index.html` — main page
-- `style.css` — styling
-- `script.js` — logic to compute entropy and render distribution
+This tool includes:
 
-Quick local preview
-1. Open `index.html` in your browser (double-click or right-click > Open).
+Phase change entropy (ΔS = ΔH / T)
 
-To add this to GitHub under the account `kumarsumed205-debug`
-1. Create a repository on GitHub (e.g. name it `entropycalculator`).
-2. In this local folder (PowerShell), run:
+Heating entropy (ΔS = n·C·ln(T₂/T₁))
 
-```powershell
-git init ;
-git add . ;
-git commit -m "Add entropy calculator webpage" ;
-git remote add origin https://github.com/kumarsumed205-debug/entropycalculator.git ;
-git branch -M main ;
-git push -u origin main
-```
+Gas expansion entropy (ΔS = n·R·ln(V₂/V₁))
 
-If you prefer, I can attempt to run the git commands and push for you — I will need your local Git to be configured (and authentication set up). Ask me to push and I'll proceed.
+Spontaneity prediction using Gibbs free energy (ΔG = ΔH – TΔS)
+ Features
+ <br>
+✔ 1. Phase Change Entropy
+
+Input: ΔH (kJ/mol), Temperature (°C or K)
+
+Converts temperature to Kelvin
+
+Calculates entropy change using:
+ΔS = ΔH / T
+
+✔ 2. Heating Entropy
+
+Input: Number of moles, Heat capacity, Initial & final temperature
+
+Temperature conversion included
+
+Formula used:
+ΔS = n · C · ln(T₂/T₁)
+
+✔ 3. Gas Expansion Entropy
+
+Inputs: Moles, Initial & Final Volume
+
+Formula used:
+ΔS = n · R · ln(V₂/V₁)
+
+Uses universal gas constant (R = 8.314 J/mol·K)
+
+✔ 4. Spontaneity Check (Gibbs Free Energy)
+
+Inputs: ΔH (kJ), ΔS (J/K), Temperature
+
+Determines whether reaction is:
+
+Spontaneous (ΔG < 0)
+
+Non-spontaneous (ΔG > 0)
+
+At equilibrium (ΔG = 0)
+
+Technologies Used
+<br>
+
+Python 3
+
+Tkinter (GUI framework)
+
+ttk Notebook (for tab-based interface)
+
+Math module (for logarithmic calculations)
+
+--> Project Structure
+Entropy-Calculator/
+│
+├── entropy_gui.py     # Main GUI code
+├── README.md          # Documentation
+└── (optional) assets/ # Screenshots, images
+
+-> How to Run the Application
+Step 1: Install Python
+
+Make sure Python 3.x is installed.
+
+Step 2: Run the script
+
+Open terminal / command prompt:
+
+python entropy_gui.py
+
+
+The graphical window will appear immediately.
+
+->Formulas Used
+Scenario	Formula
+Phase Change	ΔS = ΔH / T
+Heating	ΔS = n·C·ln(T₂/T₁)
+Expansion	ΔS = n·R·ln(V₂/V₁)
+Spontaneity	ΔG = ΔH – TΔS
+-> GUI Highlights
+
+Clean and simple interface
+
+Tabbed layout for easy navigation
+
+Error handling for invalid inputs
+
+Automatic temperature conversion
+
+Color-coded spontaneity results
+
+-> Future Enhancements
+
+Add graphical plots (ΔG vs T)
+
+Add unit converters
+
+Add support for multiple phases
+
+Export results as PDF/CSV
+
+Add dark mode
