@@ -16,7 +16,7 @@ Gas expansion entropy (ΔS = n·R·ln(V₂/V₁))
 Spontaneity prediction using Gibbs free energy (ΔG = ΔH – TΔS)
  Features
  <br>
-✔ 1. Phase Change Entropy
+ 1. Phase Change Entropy
 
 Input: ΔH (kJ/mol), Temperature (°C or K)
 
@@ -25,7 +25,7 @@ Converts temperature to Kelvin
 Calculates entropy change using:
 ΔS = ΔH / T
 
-✔ 2. Heating Entropy
+2. Heating Entropy
 
 Input: Number of moles, Heat capacity, Initial & final temperature
 
@@ -34,7 +34,7 @@ Temperature conversion included
 Formula used:
 ΔS = n · C · ln(T₂/T₁)
 
-✔ 3. Gas Expansion Entropy
+ 3. Gas Expansion Entropy
 
 Inputs: Moles, Initial & Final Volume
 
@@ -43,7 +43,7 @@ Formula used:
 
 Uses universal gas constant (R = 8.314 J/mol·K)
 
-✔ 4. Spontaneity Check (Gibbs Free Energy)
+ 4. Spontaneity Check (Gibbs Free Energy)
 
 Inputs: ΔH (kJ), ΔS (J/K), Temperature
 
